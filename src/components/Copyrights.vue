@@ -1,0 +1,56 @@
+<script setup>
+import { ref } from 'vue';
+
+const copyrights = ref('Copyrights © 2025 - ');
+const links = ref([{ name: '鲁ICP备2023044278号', url: 'https://beian.miit.gov.cn/' }]);
+</script>
+
+<template>
+    <div id="footer">
+        <p>{{ copyrights }}
+            <a class="footer-msg" v-for="link in links" :key="link.name" :href="link.url">{{ link.name }}</a>
+        </p>
+    </div>
+</template>
+
+<style scoped>
+#footer {
+    position: fixed;
+    bottom: 8px;
+    left: calc(50vw - 180px);
+    right: calc(50vw - 180px);
+    color: #FFF;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #00000043;
+    font-family: "MiSans VF";
+    text-align: center;
+    text-shadow: #00000043;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease;
+    animation: floatUp 0.3s ease-out forwards;
+}
+
+#footer:hover {
+    background-color: #00000066;
+}
+
+a.footer-msg {
+    color: #FFF;
+    transition: color 0.3s;
+}
+
+a.footer-msg:visited {
+    color: #FFF;
+}
+
+a.footer-msg:hover {
+    color: #66CC66;
+}
+
+a.footer-msg:active {
+    color: #FFCC7A;
+}
+</style>
