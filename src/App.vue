@@ -71,7 +71,7 @@ export default {
             <div v-if="showTooltip && !isMobile" class="tooltip">
               <div class="tooltip-content">
                 <iconify-icon icon="fluent:person-info-24-regular" class="tooltip-icon"></iconify-icon>
-                <span>关于作者</span>
+                <span>关于</span>
               </div>
               <div class="tooltip-arrow"></div>
             </div>
