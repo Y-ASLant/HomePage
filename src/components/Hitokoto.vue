@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from 'vue';
+import { ref } from 'vue';
 
 const hitokoto = ref({
   hitokoto: '不以物喜，不以己悲。',

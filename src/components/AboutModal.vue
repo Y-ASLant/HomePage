@@ -68,10 +68,14 @@ export default {
         <div class="modal-header">
           <h2>关于</h2>
           <button class="close-btn" @click="closeModal">
-            <iconify-icon icon="fluent:dismiss-24-regular" height="1.2em" width="1.2em"></iconify-icon>
+            <iconify-icon
+              icon="fluent:dismiss-24-regular"
+              height="1.2em"
+              width="1.2em"
+            ></iconify-icon>
           </button>
         </div>
-        
+
         <div class="modal-content">
           <div class="about-section">
             <div class="avatar-section">
@@ -79,22 +83,37 @@ export default {
               <h3>ASLant</h3>
               <p class="subtitle">嵌入式开发 & 全栈开发 & 技术爱好者</p>
             </div>
-            
+
             <div class="info-section">
               <div class="info-item">
-                <iconify-icon icon="logos:google-maps" class="info-icon" width="20" height="20"></iconify-icon>
+                <iconify-icon
+                  icon="logos:google-maps"
+                  class="info-icon"
+                  width="20"
+                  height="20"
+                ></iconify-icon>
                 <span>中国.山东.济南</span>
               </div>
               <div class="info-item">
-                <iconify-icon icon="logos:google-gmail" class="info-icon" width="20" height="20"></iconify-icon>
-                <span class="email-text email-container" 
-                      @mouseenter="showCopyTooltip = true"
-                      @mouseleave="showCopyTooltip = false"
-                      @click="copyEmail">aslant0607@gmail.com
+                <iconify-icon
+                  icon="logos:google-gmail"
+                  class="info-icon"
+                  width="20"
+                  height="20"
+                ></iconify-icon>
+                <span
+                  class="email-text email-container"
+                  @mouseenter="showCopyTooltip = true"
+                  @mouseleave="showCopyTooltip = false"
+                  @click="copyEmail"
+                  >aslant0607@gmail.com
                   <transition name="email-tooltip">
                     <div v-if="showCopyTooltip && !copySuccess" class="email-tooltip">
                       <div class="tooltip-content">
-                        <iconify-icon icon="fluent:copy-24-regular" class="tooltip-icon"></iconify-icon>
+                        <iconify-icon
+                          icon="fluent:copy-24-regular"
+                          class="tooltip-icon"
+                        ></iconify-icon>
                         <span>点击复制</span>
                       </div>
                       <div class="tooltip-arrow"></div>
@@ -103,7 +122,10 @@ export default {
                   <transition name="email-tooltip">
                     <div v-if="copySuccess" class="email-tooltip success">
                       <div class="tooltip-content">
-                        <iconify-icon icon="fluent:checkmark-24-regular" class="tooltip-icon"></iconify-icon>
+                        <iconify-icon
+                          icon="fluent:checkmark-24-regular"
+                          class="tooltip-icon"
+                        ></iconify-icon>
                         <span>已复制</span>
                       </div>
                       <div class="tooltip-arrow"></div>
@@ -112,22 +134,30 @@ export default {
                 </span>
               </div>
               <div class="info-item">
-                <iconify-icon icon="logos:telegram" class="info-icon" width="20" height="20"></iconify-icon>
+                <iconify-icon
+                  icon="logos:telegram"
+                  class="info-icon"
+                  width="20"
+                  height="20"
+                ></iconify-icon>
                 <a href="https://t.me/ASLant7" target="_blank" class="tg-link">@ASLant7</a>
               </div>
               <div class="info-item">
-                <iconify-icon icon="fluent-emoji-flat:penguin" class="info-icon" width="20" height="20"></iconify-icon>
+                <iconify-icon
+                  icon="fluent-emoji-flat:penguin"
+                  class="info-icon"
+                  width="20"
+                  height="20"
+                ></iconify-icon>
                 <span class="qq-text">2041438004</span>
               </div>
             </div>
-            
+
             <div class="description-section">
               <h4>简介</h4>
-              <p>
-                热爱技术，热爱开源，热爱分享。
-              </p>
+              <p>热爱技术，热爱开源，热爱分享。</p>
             </div>
-            
+
             <div class="skills-section">
               <h4>技能标签</h4>
               <div class="skills-tags">
@@ -148,7 +178,7 @@ export default {
             </div>
           </div>
         </div>
-        
+
         <div class="modal-footer">
           <p class="copyright">© 2025 ASLant. All rights reserved.</p>
         </div>
@@ -478,19 +508,19 @@ export default {
     width: 95%;
     max-height: 85vh;
   }
-  
+
   .modal-header,
   .modal-content,
   .modal-footer {
     padding-left: 16px;
     padding-right: 16px;
   }
-  
+
   .avatar {
     width: 60px;
     height: 60px;
   }
-  
+
   .skills-tags {
     justify-content: center;
   }

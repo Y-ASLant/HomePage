@@ -53,7 +53,7 @@ export default {
       this.currentBackground = this.backgroundImages[randomIndex];
       document.body.style.backgroundImage = `url(/background/${this.currentBackground})`;
     }
-  },
+  }
 };
 </script>
 
@@ -62,15 +62,19 @@ export default {
     <div class="center-flexbox">
       <div class="meBox">
         <div class="avatar-container">
-          <div class="meBox-headPhoto" 
-               @click="handleShowAbout"
-               @mouseenter="handleMouseEnter"
-               @mouseleave="handleMouseLeave">
-          </div>
+          <div
+            class="meBox-headPhoto"
+            @click="handleShowAbout"
+            @mouseenter="handleMouseEnter"
+            @mouseleave="handleMouseLeave"
+          ></div>
           <transition name="tooltip">
             <div v-if="showTooltip && !isMobile" class="tooltip">
               <div class="tooltip-content">
-                <iconify-icon icon="fluent:person-info-24-regular" class="tooltip-icon"></iconify-icon>
+                <iconify-icon
+                  icon="fluent:person-info-24-regular"
+                  class="tooltip-icon"
+                ></iconify-icon>
                 <span>关于</span>
               </div>
               <div class="tooltip-arrow"></div>
@@ -87,7 +91,7 @@ export default {
     </div>
   </div>
   <Copyrights />
-  
+
   <!-- 关于面板悬浮窗 -->
   <AboutModal :visible="showAboutModal" @close="handleCloseAbout" />
 </template>
@@ -102,7 +106,7 @@ export default {
   position: relative;
   display: inline-block;
   margin: 0 auto;
-  
+
   /* 禁用容器的选中效果 */
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -122,7 +126,7 @@ export default {
   animation: floatUp 1s ease-out;
   transition: transform 0.67s ease;
   cursor: pointer;
-  
+
   /* 禁用移动端点击选中效果 */
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -223,7 +227,7 @@ export default {
   transition: transform 0.67s ease;
 }
 
-@media screen and (max-width : 560px) {
+@media screen and (max-width: 560px) {
   .meBox {
     min-width: 100%;
   }
@@ -231,7 +235,7 @@ export default {
   .meBox-main {
     box-sizing: border-box;
   }
-  
+
   /* 移动端完全隐藏tooltip */
   .tooltip {
     display: none !important;
