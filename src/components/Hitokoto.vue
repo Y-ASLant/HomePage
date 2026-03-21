@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const hitokoto = ref({
   hitokoto: '不以物喜，不以己悲。',
@@ -7,11 +7,36 @@ const hitokoto = ref({
 });
 
 async function getHitokoto() {
-  const response = await fetch('https://v1.hitokoto.cn/?max_length=20?c=a&c=b&c=c');
-  hitokoto.value = await response.json();
+  try {
+    const response = await fetch(
+      'https://api.timelessq.com/sentence?type=a,b,c,d,e,h,i,j,k,l&minLength=5&maxLength=20'
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const result = await response.json();
+    const data = result?.data;
+    if (!data?.hitokoto) {
+      throw new Error('Invalid response payload');
+    }
+
+    hitokoto.value = {
+      hitokoto: data.hitokoto,
+      from: data.from || '未知来源'
+    };
+  } catch (error) {
+    console.error('获取一言失败:', error);
+    hitokoto.value = {
+      hitokoto: '不以物喜，不以己悲。',
+      from: '岳阳楼记'
+    };
+  }
 }
 
-getHitokoto();
+onMounted(() => {
+  getHitokoto();
+});
 </script>
 
 <template>
