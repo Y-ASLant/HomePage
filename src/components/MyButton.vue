@@ -22,7 +22,7 @@ export default {
       :key="i"
       :href="link.url"
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
     >
       <iconify-icon :icon="link.icon" class="icon" height="1.35em" width="1.35em"></iconify-icon>
       <span class="label">{{ link.name }}</span>
@@ -50,13 +50,29 @@ export default {
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   text-shadow: #00000043;
-  animation: floatUp 1s ease-out;
+  animation: glassReveal 0.68s ease-out both;
+  animation-delay: 0.42s;
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.meBox-button:nth-child(2) {
+  animation-delay: 0.48s;
+}
+
+.meBox-button:nth-child(3) {
+  animation-delay: 0.54s;
+}
+
+.meBox-button:nth-child(4) {
+  animation-delay: 0.6s;
 }
 
 .meBox-button .icon {

@@ -33,7 +33,8 @@ const links = ref([{ name: '鲁ICP备2023044278号', url: 'https://beian.miit.go
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   transition: background-color 0.3s ease;
-  animation: floatUp 0.3s ease-out forwards;
+  animation: glassReveal 0.66s ease-out both;
+  animation-delay: 0.68s;
 }
 
 #footer:hover {

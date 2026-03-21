@@ -23,7 +23,8 @@ const options: TypedOptions = {
 .meBox-title {
   font-size: 3rem;
   color: #fffffff3;
-  animation: floatUp 1s ease-out;
+  animation: glassReveal 0.72s ease-out both;
+  animation-delay: 0.14s;
   font-family:
     'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;

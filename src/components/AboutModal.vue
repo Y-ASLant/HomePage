@@ -140,7 +140,9 @@ export default {
                   width="20"
                   height="20"
                 ></iconify-icon>
-                <a href="https://t.me/ASLant7" target="_blank" class="tg-link">@ASLant7</a>
+                <a href="https://t.me/ASLant7" target="_blank" rel="noopener noreferrer" class="tg-link"
+                  >@ASLant7</a
+                >
               </div>
               <div class="info-item">
                 <iconify-icon
