@@ -180,7 +180,7 @@ export default {
         </div>
 
         <div class="modal-footer">
-          <p class="copyright">© 2025 ASLant. All rights reserved.</p>
+          <p class="copyright">© 2026 ASLant. All rights reserved.</p>
         </div>
       </div>
     </div>

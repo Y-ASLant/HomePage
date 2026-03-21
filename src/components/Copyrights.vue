@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const copyrights = ref('Copyrights © 2025 - ');
+const copyrights = ref('Copyrights © 2026 - ');
 const links = ref([{ name: '鲁ICP备2023044278号', url: 'https://beian.miit.gov.cn/' }]);
 </script>
 

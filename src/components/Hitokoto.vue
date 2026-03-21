@@ -1,9 +1,24 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
+import StaggerText from './StaggerText.vue';
+
+const STAGGER_DELAY = 0.015;
+const CHAR_DURATION = 0.3;
+const SOURCE_GAP = 0.08;
 
 const hitokoto = ref({
   hitokoto: '不以物喜，不以己悲。',
   from: '岳阳楼记'
+});
+const animationKey = ref(0);
+
+const sourceText = computed(() => `——「${hitokoto.value.from}」`);
+const bodyLength = computed(() => hitokoto.value.hitokoto.length);
+const sourceStartDelay = computed(() => {
+  if (bodyLength.value === 0) {
+    return CHAR_DURATION + SOURCE_GAP;
+  }
+  return (bodyLength.value - 1) * STAGGER_DELAY + CHAR_DURATION + SOURCE_GAP;
 });
 
 async function getHitokoto() {
@@ -25,12 +40,14 @@ async function getHitokoto() {
       hitokoto: data.hitokoto,
       from: data.from || '未知来源'
     };
+    animationKey.value += 1;
   } catch (error) {
     console.error('获取一言失败:', error);
     hitokoto.value = {
       hitokoto: '不以物喜，不以己悲。',
       from: '岳阳楼记'
     };
+    animationKey.value += 1;
   }
 }
 
@@ -42,9 +59,21 @@ onMounted(() => {
 <template>
   <div class="meBox-hitokoto">
     <div class="bracket left">“</div>
-    <p>{{ hitokoto.hitokoto }}</p>
+    <StaggerText
+      :animation-key="animationKey"
+      :text="hitokoto.hitokoto"
+      :stagger-delay="STAGGER_DELAY"
+      :duration="CHAR_DURATION"
+    />
     <div class="bracket right">”</div>
-    <p class="right-align">——「{{ hitokoto.from }}」</p>
+    <StaggerText
+      :animation-key="`source-${animationKey}`"
+      :text="sourceText"
+      :base-delay="sourceStartDelay"
+      :stagger-delay="STAGGER_DELAY"
+      :duration="CHAR_DURATION"
+      class="right-align source-line"
+    />
   </div>
 </template>
 
@@ -57,6 +86,10 @@ onMounted(() => {
 
 .right-align {
   text-align: right;
+}
+
+.source-line {
+  min-height: 1.5em;
 }
 
 .bracket {
