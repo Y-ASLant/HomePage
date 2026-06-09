@@ -229,11 +229,11 @@ export default {
 }
 
 .modal-container {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 10px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   max-width: 500px;
   width: 90%;
   max-height: 80vh;
@@ -259,9 +259,10 @@ export default {
 
 .modal-header h2 {
   margin: 0;
-  color: #333;
+  color: #fff;
   font-size: 1.5rem;
   font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .close-btn {
@@ -270,13 +271,13 @@ export default {
   cursor: pointer;
   padding: 4px;
   border-radius: 6px;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
   transition: all 0.2s ease;
 }
 
 .close-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #333;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
 .modal-content {
@@ -303,14 +304,15 @@ export default {
 
 .avatar-section h3 {
   margin: 0 0 8px;
-  color: #333;
+  color: #fff;
   font-size: 1.4rem;
   font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
   margin: 0 0 20px;
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
 }
 
@@ -325,7 +327,7 @@ export default {
 .info-item {
   display: flex;
   align-items: center;
-  color: #555;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.9rem;
 }
 
@@ -346,7 +348,7 @@ export default {
 }
 
 .tg-link {
-  color: #555;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   padding: 4px 8px;
   margin: -4px -8px;
@@ -355,8 +357,8 @@ export default {
 }
 
 .tg-link:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #0088cc;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
 .qq-text {
@@ -464,14 +466,15 @@ export default {
 .description-section h4,
 .skills-section h4 {
   margin: 0 0 12px;
-  color: #333;
+  color: #fff;
   font-size: 1.1rem;
   font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .description-section p {
   margin: 0;
-  color: #555;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   font-size: 0.9rem;
 }
@@ -483,8 +486,8 @@ export default {
 }
 
 .skill-tag {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #333;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
   padding: 4px 12px;
   border-radius: 16px;
   font-size: 0.8rem;
@@ -493,13 +496,13 @@ export default {
 
 .modal-footer {
   padding: 16px 24px 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
 }
 
 .copyright {
   margin: 0;
-  color: #888;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.8rem;
 }
 
