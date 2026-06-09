@@ -179,15 +179,17 @@ export default {
               <div class="skills-tags">
                 <span class="skill-tag">Python</span>
                 <span class="skill-tag">Qt</span>
-                <span class="skill-tag">Vue</span>
                 <span class="skill-tag">Android</span>
                 <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Linux</span>
                 <span class="skill-tag">Go</span>
                 <span class="skill-tag">Rust</span>
                 <span class="skill-tag">C/C++</span>
                 <span class="skill-tag">Yolo</span>
                 <span class="skill-tag">OpenCV</span>
                 <span class="skill-tag">Kotlin</span>
+                <span class="skill-tag">逆向</span>
+                <span class="skill-tag">爬虫</span>
               </div>
             </div>
 
@@ -315,12 +317,14 @@ export default {
 .info-section {
   margin-bottom: 24px;
   text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
   color: #555;
   font-size: 0.9rem;
 }
