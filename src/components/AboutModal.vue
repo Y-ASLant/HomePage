@@ -229,7 +229,7 @@ export default {
 }
 
 .modal-container {
-  background-color: rgba(255, 255, 255, 0.26);
+  background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 10px;
@@ -444,7 +444,7 @@ export default {
 
 .info-icon {
   margin-right: 12px;
-  color: #666;
+  color: rgba(255, 255, 255, 0.85);
   flex-shrink: 0;
   width: 20px;
   height: 20px;
