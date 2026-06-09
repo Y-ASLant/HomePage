@@ -121,15 +121,6 @@ export default {
               </div>
               <div class="info-item">
                 <iconify-icon
-                  icon="logos:google-maps"
-                  class="info-icon"
-                  width="20"
-                  height="20"
-                ></iconify-icon>
-                <span>中国.山东.济南</span>
-              </div>
-              <div class="info-item">
-                <iconify-icon
                   icon="logos:google-gmail"
                   class="info-icon"
                   width="20"
@@ -166,6 +157,15 @@ export default {
                     </div>
                   </transition>
                 </span>
+              </div>
+              <div class="info-item">
+                <iconify-icon
+                  icon="logos:google-maps"
+                  class="info-icon"
+                  width="20"
+                  height="20"
+                ></iconify-icon>
+                <span>中国.山东.济南</span>
               </div>
             </div>
 
@@ -232,7 +232,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: 16px;
+  border-radius: 10px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   max-width: 500px;
   width: 90%;
