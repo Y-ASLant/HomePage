@@ -20,15 +20,16 @@ const links = ref([{ name: '鲁ICP备2023044278号', url: 'https://beian.miit.go
 #footer {
   position: fixed;
   bottom: 8px;
-  left: calc(50vw - 180px);
-  right: calc(50vw - 180px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(360px, calc(100% - 32px));
   color: #fff;
   padding: 5px;
   border-radius: 10px;
   background-color: #00000043;
   font-family: 'MiSans VF';
   text-align: center;
-  text-shadow: #00000043;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);

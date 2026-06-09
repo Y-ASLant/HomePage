@@ -49,7 +49,7 @@ export default {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-  text-shadow: #00000043;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
   animation: glassReveal 0.68s ease-out both;
   animation-delay: 0.42s;
   transition: background-color 0.3s ease;

@@ -80,7 +80,7 @@ onMounted(() => {
 <style scoped>
 .meBox-hitokoto {
   font-size: 1.2rem;
-  text-shadow: #00000043;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
   border-right: 0 solid;
 }
 
@@ -95,7 +95,7 @@ onMounted(() => {
 .bracket {
   font-size: 2rem;
   color: #fff;
-  text-shadow: #00000043;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
 }
 
 .bracket.left {

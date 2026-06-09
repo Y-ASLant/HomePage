@@ -24,15 +24,19 @@ export default {
       }
     },
     async copyEmail() {
-      try {
-        await navigator.clipboard.writeText('aslant0607@gmail.com');
-        this.copySuccess = true;
-        this.showCopyTooltip = false;
-        setTimeout(() => {
-          this.copySuccess = false;
-        }, 2000);
-      } catch (err) {
-        console.error('复制失败:', err);
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          await navigator.clipboard.writeText('aslant0607@gmail.com');
+          this.copySuccess = true;
+          this.showCopyTooltip = false;
+          setTimeout(() => {
+            this.copySuccess = false;
+          }, 2000);
+        } catch (err) {
+          console.error('复制失败:', err);
+          this.fallbackCopyTextToClipboard('aslant0607@gmail.com');
+        }
+      } else {
         this.fallbackCopyTextToClipboard('aslant0607@gmail.com');
       }
     },
@@ -87,6 +91,36 @@ export default {
             <div class="info-section">
               <div class="info-item">
                 <iconify-icon
+                  icon="logos:telegram"
+                  class="info-icon"
+                  width="20"
+                  height="20"
+                ></iconify-icon>
+                <a
+                  href="https://t.me/ASLant7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tg-link"
+                  >ASLant7</a
+                >
+              </div>
+              <div class="info-item">
+                <iconify-icon
+                  icon="mdi:github"
+                  class="info-icon"
+                  width="20"
+                  height="20"
+                ></iconify-icon>
+                <a
+                  href="https://github.com/Y-ASLant"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tg-link"
+                  >Y-ASLant</a
+                >
+              </div>
+              <div class="info-item">
+                <iconify-icon
                   icon="logos:google-maps"
                   class="info-icon"
                   width="20"
@@ -133,26 +167,6 @@ export default {
                   </transition>
                 </span>
               </div>
-              <div class="info-item">
-                <iconify-icon
-                  icon="logos:telegram"
-                  class="info-icon"
-                  width="20"
-                  height="20"
-                ></iconify-icon>
-                <a href="https://t.me/ASLant7" target="_blank" rel="noopener noreferrer" class="tg-link"
-                  >@ASLant7</a
-                >
-              </div>
-              <div class="info-item">
-                <iconify-icon
-                  icon="fluent-emoji-flat:penguin"
-                  class="info-icon"
-                  width="20"
-                  height="20"
-                ></iconify-icon>
-                <span class="qq-text">2041438004</span>
-              </div>
             </div>
 
             <div class="description-section">
@@ -167,14 +181,21 @@ export default {
                 <span class="skill-tag">Qt</span>
                 <span class="skill-tag">Vue</span>
                 <span class="skill-tag">Android</span>
-                <span class="skill-tag">Linux</span>
                 <span class="skill-tag">Docker</span>
                 <span class="skill-tag">Go</span>
+                <span class="skill-tag">Rust</span>
                 <span class="skill-tag">C/C++</span>
                 <span class="skill-tag">Yolo</span>
                 <span class="skill-tag">OpenCV</span>
                 <span class="skill-tag">Kotlin</span>
-                <span class="skill-tag">ARM单片机</span>
+              </div>
+            </div>
+
+            <div class="skills-section">
+              <h4>硬件开发</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">32单片机</span>
+                <span class="skill-tag">Nvidia Jetson</span>
                 <span class="skill-tag">树莓派</span>
               </div>
             </div>
@@ -353,7 +374,7 @@ export default {
   position: absolute;
   left: 100%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(8px);
   z-index: 100;
 }
 
@@ -406,13 +427,13 @@ export default {
 .email-tooltip-enter-from,
 .email-tooltip-leave-to {
   opacity: 0;
-  transform: translateY(-50%) translateX(-5px);
+  transform: translateY(-50%) translateX(0);
 }
 
 .email-tooltip-enter-to,
 .email-tooltip-leave-from {
   opacity: 1;
-  transform: translateY(-50%) translateX(0);
+  transform: translateY(-50%) translateX(8px);
 }
 
 .info-icon {
@@ -430,6 +451,10 @@ export default {
 .skills-section {
   text-align: left;
   margin-bottom: 20px;
+}
+
+.skills-section:last-child {
+  margin-bottom: 0;
 }
 
 .description-section h4,
