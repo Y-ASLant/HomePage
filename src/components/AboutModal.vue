@@ -295,7 +295,7 @@ export default {
 .avatar {
   width: 80px;
   height: 80px;
-  background: url(/about.png);
+  background: url(/about.webp);
   background-size: cover;
   border-radius: 50%;
   margin: 0 auto 16px;

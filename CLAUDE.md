@@ -38,7 +38,7 @@ npm run preview      # 预览构建结果
 ### 静态资源
 - 背景图：`public/background/{0,1,2}.webp`（随机）
 - 头像：`public/favicon.ico`
-- 关于页：`public/about.png`
+- 关于页：`public/about.webp`
 
 ## 技术细节
 
